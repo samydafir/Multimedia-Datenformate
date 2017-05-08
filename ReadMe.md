@@ -12,16 +12,16 @@
 ### Required Folder structure:
 
 			Matching Software
-					  |
-				experiments
-					  |
-				  images
-				 /      \
-	 original      output
-			 | 	         |
-	 png images	   output_folders
-							     |
-						     output images
+				|
+			  experiments
+	     		        |
+			     images
+		            /      \
+	              original      output
+			 | 	      |
+	 	      png images    output_folders
+				      |
+				    output images
 
 * output_folders: one folders per experiment (codec, crf and group of pictures values) e.g. libx264_crf23_gpofpic:24.
 * output and output_folders are created when not present and files inside the folders are overwritten.
