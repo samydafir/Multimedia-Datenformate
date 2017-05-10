@@ -51,7 +51,6 @@
 				      |
 				    output images
 
-* Place matching.cmd in Matching Software folder
 * Results values are appended to the file experiment/images/results.txt.
   Format: output_folder: EER score
   output_folder: codec-crf-groupOfPics-vidSize
