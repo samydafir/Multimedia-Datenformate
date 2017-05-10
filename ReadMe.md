@@ -40,4 +40,5 @@ Format: output_folder EER-score
 	in windows using the same arguments. Weird!
 * matlab problem persists. Somehow the path is not recognized by matlab using linux. Still weird!
   Solved by only doing the ffmpeg part in linux. Do matching in windows:
-  Create same structure in windows and use matching.cmd
+  Create same structure in windows and use matching.cmd.
+	Move matching.cmd to Matching Software folder and execute
