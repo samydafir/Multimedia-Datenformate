@@ -31,9 +31,13 @@
 are placed in the respecive output_folder.
 Then Matlab is used to do the matching (matches each folder against the original images)
 * Results values are appended to the file experiment/images/results.txt.
-Format: original_folder output_folder EER-score
+Format: output_folder EER-score
+		output_folder naming format: codec-crf-groupofpics-videosize
 
 ### Progress and Problems
 * ffmpeg part works correctly
 * the matlab program somehow requests more arguments and does hence not work. Works perfectly
-	in Windows using the same arguments. Weird!
+	in windows using the same arguments. Weird!
+* matlab problem persists. Somehow the path is not recognized by matlab using linux. Still weird!
+  Solved by only doing the ffmpeg part in linux. Do matching in windows:
+  Create same structure in windows and use matching.cmd
