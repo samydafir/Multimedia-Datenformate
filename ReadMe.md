@@ -58,8 +58,6 @@
   
 ### Progress and Problems
 * ffmpeg part works correctly
-* the matlab program somehow requests more arguments and does hence not work. Works perfectly
-	in windows using the same arguments. Weird!
 * matlab problem persists. Somehow the path is not recognized by matlab using linux. Still weird!
   Solved by only doing the ffmpeg part in linux. Do matching in windows:
   Create same structure in windows and use matching.cmd.
