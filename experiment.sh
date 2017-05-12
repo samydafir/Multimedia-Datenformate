@@ -1,11 +1,11 @@
 #!/bin/bash
 
 startcrf=$1
-codec=$2
+crflimit=$2
+codec=$3
 declare -a gpofpics=(1)
 declare -a fileNames=()
 framerate=30
-crflimit=2
 settingspath=Settings/settingsMaxCurvature.ini
 currdir=experiments/images
 folder=$codec"-"$crf"-"$gpofpics

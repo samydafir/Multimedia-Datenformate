@@ -3,11 +3,12 @@
 ## Usage
 ##### Place in experiment.sh Matching software directory
 ##### Requires Matlab/bin to be in the PATH.
-##### Run: ./experiment.sh arg1 arg2
+##### Run: ./experiment.sh arg1 arg2 arg3
 
 ### Arguments:
-###### arg1: crf value to start at
-###### arg2: codec to use e.g. libx264
+###### arg1: crf value to start at3
+###### arg2: crf value to stop at
+###### arg3: codec to use e.g. libx264
 
 ### Required Folder structure:
 
