@@ -76,9 +76,23 @@
 				      |
 				    output images
 
-* Results are placed in an output_folder (named: jp2-"ratio"-"size", size currently in Bytes)
+* Results are placed in an output_folder (named: jp2-"rate"-"size", size currently in Bytes: du -b)
 * All original images get compressed and are stored in one single folder
-* TODO: find suitable ratios
+* TODO: find suitable "compression rates" (actually the used parameter is not a "real" ratio, it seems to be the number of compression runs with standard settings)
+* List of "compression rates" and corresponding folder sizes (in bytes):
+  2:134410227
+  3:120568007
+  4:91642589
+  10:36621966
+  20:18228945
+  30:12094183
+  40:9068498
+  50:7266708
+  60:6050048
+  70:5194201
+  80:4563487
+  90:4073236
+  100:3672918
 
 ### Progress and Problems
 * ffmpeg part works correctly
