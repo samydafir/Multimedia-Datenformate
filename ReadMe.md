@@ -76,9 +76,9 @@
 				      |
 				    output images
 
-* Results are placed in an output_folder (named: jp2-<size>, size currently in Bytes)
+* Results are placed in an output_folder (named: jp2-"ratio"-"size", size currently in Bytes)
 * All original images get compressed and are stored in one single folder
-* TODO: variable ratio for the jp2 compression; find best intervalls
+* TODO: find suitable ratios
 
 ### Progress and Problems
 * ffmpeg part works correctly
