@@ -3,7 +3,7 @@
 startcrf=$1
 crflimit=$2
 codec=$3
-declare -a gpofpics=(1)
+declare -a gpofpics=(1 24)
 declare -a fileNames=()
 framerate=30
 settingspath=Settings/settingsMaxCurvature.ini
@@ -50,12 +50,12 @@ do
 			echo `rm -R "$currdir/output/$folder"`
 		fi
 		echo `mkdir "$currdir/output/$folder"`
-		echo `ffmpeg -y -r $framerate -f image2 -pattern_type glob -i $currdir'/original/*.png' -vcodec $codec -crf $startcrf  -pix_fmt yuv420p -g $i $currdir/output/$folder/video.mp4`
-		echo `ffmpeg -y -r $framerate -i $currdir/output/$folder/video.mp4 $currdir/output/$folder/%04d.png`
+		echo `ffmpeg -loglevel panic -y -r $framerate -f image2 -pattern_type glob -i $currdir'/original/*.png' -vcodec $codec -qscale:v $startcrf -crf $startcrf  -pix_fmt yuv420p -g $i $currdir/output/$folder/video.mp4`
+		echo `ffmpeg -loglevel panic -y -r $framerate -i $currdir/output/$folder/video.mp4 $currdir/output/$folder/%04d.png`
 		currSize=`du -k "$currdir/output/$folder/video.mp4" | cut -f1`
 		echo `rm $currdir/output/$folder/video.mp4`
 		renameFiles $folder
 		echo `mv $currdir/output/$folder $currdir/output/$folder"-"$currSize`
 	done
-	startcrf=$(( $startcrf + 1 ))
+	startcrf=$(( $startcrf + 2 ))
 done
