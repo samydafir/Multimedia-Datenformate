@@ -19,11 +19,11 @@ input_dir='original'
 # output parent directory
 output_par_dir='output'
 # min ratio
-ratio_min=2
+ratio_min=10
 # max ratio
-ratio_max=4
+ratio_max=50
 # ratio intervall
-ratio_intervall='0.5'
+ratio_intervall='8'
 
 ratio=$ratio_min
 

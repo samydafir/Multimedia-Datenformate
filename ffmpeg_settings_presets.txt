@@ -1,0 +1,42 @@
+--preset <string>       Use a preset to select encoding settings [medium]
+                            Overridden by user settings.
+                            - ultrafast:
+                              --no-8x8dct --aq-mode 0 --b-adapt 0
+                              --bframes 0 --no-cabac --no-deblock
+                              --no-mbtree --me dia --no-mixed-refs
+                              --partitions none --rc-lookahead 0 --ref 1
+                              --scenecut 0 --subme 0 --trellis 0
+                              --no-weightb --weightp 0
+                            - superfast:
+                              --no-mbtree --me dia --no-mixed-refs
+                              --partitions i8x8,i4x4 --rc-lookahead 0
+                              --ref 1 --subme 1 --trellis 0 --weightp 1
+                            - veryfast:
+                              --no-mixed-refs --rc-lookahead 10
+                              --ref 1 --subme 2 --trellis 0 --weightp 1
+                            - faster:
+                              --no-mixed-refs --rc-lookahead 20
+                              --ref 2 --subme 4 --weightp 1
+                            - fast:
+                              --rc-lookahead 30 --ref 2 --subme 6
+                              --weightp 1
+                            - medium:
+                              Default settings apply.
+                            - slow:
+                              --b-adapt 2 --direct auto --me umh
+                              --rc-lookahead 50 --ref 5 --subme 8
+                            - slower:
+                              --b-adapt 2 --direct auto --me umh
+                              --partitions all --rc-lookahead 60
+                              --ref 8 --subme 9 --trellis 2
+                            - veryslow:
+                              --b-adapt 2 --bframes 8 --direct auto
+                              --me umh --merange 24 --partitions all
+                              --ref 16 --subme 10 --trellis 2
+                              --rc-lookahead 60
+                            - placebo:
+                              --bframes 16 --b-adapt 2 --direct auto
+                              --slow-firstpass --no-fast-pskip
+                              --me tesa --merange 24 --partitions all
+                              --rc-lookahead 60 --ref 16 --subme 11
+                              --trellis 2
