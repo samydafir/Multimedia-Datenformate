@@ -1,0 +1,33 @@
+--tune <Tuningvorlage>
+grain
+--aq-strength 0.5 
+--no-dct-decimate 
+--deadzone-inter 6 
+--deadzone-intra 6 
+--deblock -2:-2 
+--ipratio 1.1 
+--pbratio 1.1 
+--psy-rd 1.0:0.25 
+--qcomp 0.8
+
+stillimage
+--aq-strength 1.2 
+--deblock -3:-3 
+--psy-rd 2.0:0.7
+
+--profile <H.264-Profil>
+baseline
+--no-8x8dct 
+--bframes 0 
+--no-cabac 
+--cqm flat 
+--weightp 0
+
+main
+--no-8x8dct 
+--cqm flat
+
+high
+10 , 422 , 444
+
+Source : https://encodingwissen.de/codecs/x264/referenz/
