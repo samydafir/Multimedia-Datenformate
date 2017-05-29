@@ -9,6 +9,7 @@
 ###### arg1: crf value to start at3
 ###### arg2: crf value to stop at
 ###### arg3: codec to use e.g. libx264
+###### arg4: preset for h.264, h.265
 
 ### Folder structure:
 
