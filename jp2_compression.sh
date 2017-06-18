@@ -1,36 +1,38 @@
 #!/bin/bash
 
-compress() {
+compress()
+{
+  current_rate=$1
+  rm -rf output/jp2-$current_rate-$nr_layers
+  mkdir output/jp2-$current_rate-$nr_layers
 
- opj_compress -r $1 -ImgDir $input_dir -OutFor jp2
-
- mkdir $output_par_dir/jp2
- mv $input_dir/*.jp2 $output_par_dir/jp2/
- size=`du -b $output_par_dir/jp2 | tr '\t' ' ' | cut -d " " -f1`
- ratio_string=`echo $ratio | tr '.' 'p'`
- mv $output_par_dir/jp2 $output_par_dir/jp2-$ratio_string-$size
+  for file in original/*.png; do
+    name=`basename -s .png $file`
+    convert $file -define jp2:rate=$current_rate -define jp2:number-resolutions=$nr_layers output/jp2-$current_rate-$nr_layers/${name}.jp2
+  done
 }
 
 # main
-# TODO: Kompression fuer sinnvolle, unterschiedliche compression ratios, nicht nur 1
 
-# input directory
-input_dir='original'
-# output parent directory
-output_par_dir='output'
-# min ratio
-ratio_min=10
-# max ratio
-ratio_max=50
-# ratio intervall
-ratio_intervall='8'
+argc=4
 
-ratio=$ratio_min
+if [ $# -ne $argc ]; then
+ echo "Usage: bash jp2_compression.sh <min rate> <max rate> <rate step> <layers>"
+ exit
+fi
 
-is_ratio_lt_ratioMax=1
+rate=$1
+max_rate=$2
+step=$3
+nr_layers=$4
 
-while [ $is_ratio_lt_ratioMax -eq 1 ]; do
-  compress $ratio
-  ratio=`echo "$ratio + $ratio_intervall" | bc`
-  is_ratio_lt_ratioMax=`echo "$ratio <= $ratio_max" | bc`
+nr_runs=$(( ($max_rate - $rate) / $step + 1))
+current_run=1
+
+while [ $rate -le $max_rate ]; do
+  echo Processing $current_run"/"$nr_runs
+  compress $rate
+  current_run=$(( $current_run + 1))
+  rate=$(( $rate + $step ))
+
 done
