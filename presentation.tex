@@ -35,6 +35,33 @@ Projekttitel}
 \frame{\frametitle{Inhalt}\tableofcontents}
 
 \section{Section 1}
+\frame{\frametitle{Intro}
+General incentive of this assignment: \\
+\vspace{0.3cm}
+"`Is it possible to effectively apply \textbf{video compression} for almost identical \textbf{pictures}?"' \\
+\vspace{0.3cm}
+$\rightarrow$ can we achieve \textit{better} results with video compression than with image compression?\\
+$\rightarrow$ which codec is best suited for our purposes?\\
+$\rightarrow$ how does the change of video codec parameters affect the results?\\
+$\rightarrow$ how to determine the quality of the results?\\
+}
+
+\section{Setup}
+\frame{\frametitle{Dataset}
+The database consists of finger vein images of different fingers of different persons\\
+\begin{itemize}
+ \item 6 fingers per person, with 4 pictures per finger $\rightarrow$ 24 pictures per person
+ \item 60 persons at all - - - 60 korrekt ?? - - - 
+ \item we worked with a subset of those
+\end{itemize}
+ \
+- - - Platzhalter Fingervenen Bilder - - -
+%\begin{figure}[H]
+% \centering
+% \includegraphics[width=0.5\textwidth]{graphics/ipb_frames.png}
+%\end{figure}
+}
+
 \subsection{JPEG2000}
 \frame{\frametitle{JPEG2000}
 \begin{itemize}
@@ -44,7 +71,7 @@ Projekttitel}
 \end{itemize}
 }
 
-\subsection{Subsection 2}
+\subsection{I,P,B-Frames}
 \frame{\frametitle{I,P,B-Frames}
 % http://www.tipterminal.de/pics/ipb_frames.gif
 3 different types of pictures
@@ -59,7 +86,7 @@ Projekttitel}
 \end{figure}
 }
 
-\subsection{Subsection 2}
+\subsection{Group Of Pictures}
 \frame{\frametitle{Group Of Pictures}
 \begin{itemize}
  \item usually defined with two numbers
