@@ -61,7 +61,7 @@
 ### Usage
 ##### Place jp2_compression.sh in image folder
 ##### Create folder structure
-##### bash jp2_compression.sh <min rate> <max rate> <rate step> <layers>
+##### bash jp2_compression.sh "min rate" "max rate" "rate step" "layers"
 
 ### Folder structure:
 
