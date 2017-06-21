@@ -35,14 +35,45 @@ Projekttitel}
 \frame{\frametitle{Inhalt}\tableofcontents}
 
 \section{Section 1}
-\subsection{Subsection 1}
-\frame{\frametitle{Subsection 1}
-Testtext 1.1
+\subsection{JPEG2000}
+\frame{\frametitle{JPEG2000}
+\begin{itemize}
+ \item used as a baseline for comparison
+ \item standard encoding settings, except number of layers
+ \item ImageMagick with integrated OpenJPEG library
+\end{itemize}
 }
 
 \subsection{Subsection 2}
-\frame{\frametitle{Subsection 2}
-Testtext 1.2
+\frame{\frametitle{I,P,B-Frames}
+% http://www.tipterminal.de/pics/ipb_frames.gif
+3 different types of pictures
+\begin{itemize}
+ \item I-Frame: Intra-coded picture
+ \item P-Frame: Predictive-coded picture
+ \item B-Frame: Bidirectional predictive-coded picture
+\end{itemize}
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=0.5\textwidth]{graphics/ipb_frames.png}
+\end{figure}
+}
+
+\subsection{Subsection 2}
+\frame{\frametitle{Group Of Pictures}
+\begin{itemize}
+ \item usually defined with two numbers
+ \begin{enumerate}
+  \item defines distance of two I-Frames
+  \item defines distance of two anchor frames (I or P)
+ \end{enumerate}
+ \item we used GOP to adapt the encoding to the database
+ \begin{itemize}
+  \item 24 pictures per person: use GOP 24 $\rightarrow$ 1 I-Frame per person
+  \item 4 pictures per finger: use GOP 4 $\rightarrow$ 1 I-Frame per finger
+ \end{itemize}
+ \item P- and B-Frames allow higher compression $\rightarrow$ GOP affects the compression rate
+\end{itemize}
 }
 
 \section{Section 2}
