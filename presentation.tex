@@ -109,4 +109,121 @@ The database consists of finger vein images of different fingers of different pe
 Testtext 2.1
 }
 
+\section{CRF , Presets and Settings}
+\frame{\frametitle{CRF}
+\begin{itemize}
+\item CRF value (Constant Rate Factor)
+\begin{enumerate}
+    \item The range of the quantizer scale is 0-51
+    \item A lower value means better quality (0 for best quality, lossless)
+    \item default value is 23
+    \item A higher value means bad quality (51 for worst quality)
+\end{enumerate}
+\end{itemize}}
+
+\frame{\frametitle{Presets}
+\begin{itemize}
+\item presets (they provide a certain encoding speed)
+ \begin{enumerate}
+   \item ultrafast , superfast , veryfast , faster , fast 
+   \item medium (default)
+   \item slow, slower, veryslow, placebo
+   \item we focused more to the slower presets (medium-veryslow)
+ \end{enumerate}
+ \end{itemize}}
+ 
+ \frame{\frametitle{Settings}
+ \begin{itemize}
+\item what are the settings behind them?
+  
+
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ slow & slower & veryslow \\
+ \hline 
+ \hline
+ --b-adapt 2 & --b-adapt 2 & --b-adapt 2 \\
+ \hline 
+ --direct auto & --direct auto & --direct auto \\
+ \hline
+ default & default & --bframes 8\\
+ \hline
+ --me umh &  --me umh & --me umh \\
+ \hline
+ --rc-lookahead 50 & --rc-lookahead 60 & --rc-lookahead 60 \\
+ \hline
+ default & --partitions all & --partitions all \\
+ \hline
+ default & default & --merange 24 \\
+ \hline
+ --ref 5 & --ref 8 & --ref 16 \\
+ \hline
+ --subme 8 & --subme 9 & --subme 10\\
+ \hline
+ default & --trellis 2 & --trellis 2 \\
+ \hline
+\end{tabular}
+\end{center}
+
+
+      
+\end{itemize}
+ 
+}
+ \frame{\frametitle{Settings}
+  \begin{itemize}
+    \item quick explanation of the settings :
+    \begin{itemize}
+        \item --rc-lookahead "Frames" : \\
+        \begin{itemize}
+        \item amount of macroblocktree and VBV algorithms
+        \item higher value means that more memory and time is required
+        
+        \end{itemize}
+        \item --b-adapt "Mod" : \\
+        \begin{itemize}
+        \item algorithm for the adaptive distribution of B-frames
+        \item values : 0,1,2
+        \end{itemize}
+        \item --direct "Mod" : \\
+        \begin{itemize}
+        \item  temporal or spatial information is used in B frames
+        \end{itemize}
+        \item --bframes "Max" : \\
+        \begin{itemize}
+        \item Defines how many B-frames can be positioned directly behind each other
+        \item values are between 0 and 16 (3 is default)
+        \end{itemize}
+        \item --me "mod" : \\
+        \begin{itemize}
+        \item Algorithm for motion search
+        \end{itemize}
+        
+        
+    \end{itemize}
+  \end{itemize}
+ }
+\frame{\frametitle{Settings}
+\begin{itemize}
+\item --partitions "partitions" :\\
+        \begin{itemize}
+        \item partition size for macroblocks
+        \end{itemize}
+\item --merange "radius" : \\
+        \begin{itemize}
+        \item size of the area
+        \end{itemize}
+    \item --ref "frames" : \\
+    \begin{itemize}
+    \item amount of valid reference frames
+    \end{itemize}
+    \item --subme "quality" : \\
+    \begin{itemize}
+    \item Defines the quality level for the subpixel motion search and the partition decision
+    \end{itemize}
+    
+\end{itemize} 
+}
+
 \end{document}
