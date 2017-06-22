@@ -34,7 +34,7 @@ Projekttitel}
 
 \frame{\frametitle{Inhalt}\tableofcontents}
 
-\section{Section 1}
+\section{Introduction}
 \frame{\frametitle{Intro}
 General incentive of this assignment: \\
 \vspace{0.3cm}
@@ -70,6 +70,28 @@ The database consists of finger vein images of different fingers of different pe
  \item ImageMagick with integrated OpenJPEG library
 \end{itemize}
 }
+
+\subsection{Video Compression}
+\frame{\frametitle{Video Compression}
+\hspace{2cm}\huge Why video compression?
+}
+
+\frame{\frametitle{Video Compression}
+	\underline{Why video compression?}
+	\vspace{5mm}
+	\begin{itemize}
+		\item Very similar images
+		\item Image compression only compresses individual images
+		\item Video compression does 2 things:
+		\begin{enumerate}
+			\item Compresses images
+			\item Exploits similarities between images
+		\end{enumerate}
+	\end{itemize}
+}
+
+
+
 
 \subsection{I,P,B-Frames}
 \frame{\frametitle{I,P,B-Frames}
@@ -226,4 +248,73 @@ Testtext 2.1
 \end{itemize} 
 }
 
+\section{Implementation}
+
+\subsection{JPEG2000 Compression}
+\frame{\frametitle{JPEG2000 Compression}
+
+
+}
+
+\subsection{Video Compression}
+\frame{\frametitle{Video Compression}
+	Setup:
+	\begin{itemize}
+		\item Used ffmpeg v.3.3.2 (latest version)
+		\item Compressed 240 images
+		\item Different crf values (0-50)
+		\item Varying group of pictures (1, 4, 24)
+		\item two presets (medium, veryslow)
+	\end{itemize}
+	
+	
+}
+
+\frame{\frametitle{Video Compression}
+	Repeat for each (crf, gop, preset) - combination
+	\begin{enumerate}
+		\item Compress images into single video
+		\item get videosize (for compression rate)
+		\item Decompress video $\rightarrow$ get images
+		\item Put into folder named with settings
+	\end{enumerate}
+	Additional steps
+	\begin{itemize}
+		\item Collect image names $\rightarrow$ parameters for matcher
+		\item rename decompressed videos
+	\end{itemize}
+	
+	
+}
+
+\subsection{Matching}
+\frame{\frametitle{Matching}
+	
+	
+}
+
+
+\section{Results}
+
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
