@@ -181,28 +181,16 @@ The database consists of finger vein images of different fingers of different pe
 \begin{center}
 \begin{tabular}{ |c|c|c| } 
  \hline
- slow & slower & veryslow \\
+ medium & veryslow \\
  \hline 
  \hline
- --b-adapt 2 & --b-adapt 2 & --b-adapt 2 \\
- \hline 
- --direct auto & --direct auto & --direct auto \\
+ default & --b-adapt 2  \\
  \hline
- default & default & --bframes 8\\
+ default & --partitions all  \\
  \hline
- --me umh &  --me umh & --me umh \\
+ default & --bframes 8  \\
  \hline
- --rc-lookahead 50 & --rc-lookahead 60 & --rc-lookahead 60 \\
- \hline
- default & --partitions all & --partitions all \\
- \hline
- default & default & --merange 24 \\
- \hline
- --ref 5 & --ref 8 & --ref 16 \\
- \hline
- --subme 8 & --subme 9 & --subme 10\\
- \hline
- default & --trellis 2 & --trellis 2 \\
+ default & --ref 16  \\
  \hline
 \end{tabular}
 \end{center}
@@ -216,31 +204,16 @@ The database consists of finger vein images of different fingers of different pe
   \begin{itemize}
     \item quick explanation of the settings :
     \begin{itemize}
-        \item --rc-lookahead "Frames" : \\
-        \begin{itemize}
-        \item amount of macroblocktree and VBV algorithms
-        \item higher value means that more memory and time is required
-        
-        \end{itemize}
         \item --b-adapt "Mod" : \\
         \begin{itemize}
         \item algorithm for the adaptive distribution of B-frames
         \item values : 0,1,2
-        \end{itemize}
-        \item --direct "Mod" : \\
-        \begin{itemize}
-        \item  temporal or spatial information is used in B frames
         \end{itemize}
         \item --bframes "Max" : \\
         \begin{itemize}
         \item Defines how many B-frames can be positioned directly behind each other
         \item values are between 0 and 16 (3 is default)
         \end{itemize}
-        \item --me "mod" : \\
-        \begin{itemize}
-        \item Algorithm for motion search
-        \end{itemize}
-        
         
     \end{itemize}
   \end{itemize}
@@ -251,20 +224,22 @@ The database consists of finger vein images of different fingers of different pe
         \begin{itemize}
         \item partition size for macroblocks
         \end{itemize}
-\item --merange "radius" : \\
-        \begin{itemize}
-        \item size of the area
-        \end{itemize}
     \item --ref "frames" : \\
     \begin{itemize}
     \item amount of valid reference frames
     \end{itemize}
-    \item --subme "quality" : \\
-    \begin{itemize}
-    \item Defines the quality level for the subpixel motion search and the partition decision
-    \end{itemize}
     
 \end{itemize} 
+}
+
+\frame{\frametitle{Settings (qscale mpeg4)}
+\begin{itemize}
+\item -qscale:v n
+\item configure and select a video quality level
+\item value for n : 1-31
+\item 1 is the highest quality for largest filesize
+\item 31 is the lawest quality for smalest filesize
+\end{itemize}
 }
 
 \section{Implementation}
