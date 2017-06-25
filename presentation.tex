@@ -125,10 +125,29 @@ The database consists of finger vein images of different fingers of different pe
 \end{itemize}
 }
 
-\section{Section 2}
-\subsection{Subsection 1}
-\frame{\frametitle{Subsection 1}
-Testtext 2.1
+\section{Quality Assessment}
+\subsection{Matcher}
+\frame{\frametitle{Matcher}
+	
+	\begin{itemize}
+		\item Used as a "black box"
+		\item Compares original and compressed images\\
+		$\rightarrow$ Checks if matches found
+		\item calculates different error metrics
+		\item Target:\\
+		\underline{Compare results of jpeg2000 and video compression}
+	\end{itemize}
+}
+
+\frame{\frametitle{Error Metrics}
+	
+	\begin{itemize}
+		\item FMR: False Match Rate
+		\item FNMR: False Non Match Rate
+		\item EER: Equal Error Rate
+		\item Lower values are always better
+	\end{itemize}
+	
 }
 
 \section{CRF , Presets and Settings}
