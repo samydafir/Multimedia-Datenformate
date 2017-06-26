@@ -51,15 +51,15 @@ $\rightarrow$ how to determine the quality of the results?\\
 The database consists of finger vein images of different fingers of different persons\\
 \begin{itemize}
  \item 6 fingers per person, with 4 pictures per finger $\rightarrow$ 24 pictures per person
- \item 60 persons at all - - - 60 korrekt ?? - - - 
+ \item 60 persons at all
  \item we worked with a subset of those
 \end{itemize}
- \
-- - - Platzhalter Fingervenen Bilder - - -
-%\begin{figure}[H]
-% \centering
-% \includegraphics[width=0.5\textwidth]{graphics/ipb_frames.png}
-%\end{figure}
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=0.5\textwidth]{graphics/fv_1_1.png}\hfill
+ \includegraphics[width=0.5\textwidth]{graphics/fv_1_2.png}\hfill
+ \includegraphics[width=0.5\textwidth]{graphics/fv_2_1.png}\hfill
+\end{figure}
 }
 
 \subsection{JPEG2000}
@@ -67,7 +67,12 @@ The database consists of finger vein images of different fingers of different pe
 \begin{itemize}
  \item used as a baseline for comparison
  \item standard encoding settings, except number of layers
- \item ImageMagick with integrated OpenJPEG library
+ \item ImageMagick (7.0.5-10) with integrated OpenJPEG library
+ \begin{enumerate}
+  \item encode pictures with jp2, with different compression rates
+  \item determine quality of the pictures
+  \item compare with pictures compressed with video codecs
+ \end{enumerate}
 \end{itemize}
 }
 
@@ -128,7 +133,7 @@ The database consists of finger vein images of different fingers of different pe
 \section{Quality Assessment}
 \subsection{Matcher}
 \frame{\frametitle{Matcher}
-	
+
 	\begin{itemize}
 		\item Used as a "black box"
 		\item Compares original and compressed images\\
@@ -140,14 +145,14 @@ The database consists of finger vein images of different fingers of different pe
 }
 
 \frame{\frametitle{Error Metrics}
-	
+
 	\begin{itemize}
 		\item FMR: False Match Rate
 		\item FNMR: False Non Match Rate
 		\item EER: Equal Error Rate
 		\item Lower values are always better
 	\end{itemize}
-	
+
 }
 
 \section{CRF , Presets and Settings}
@@ -166,23 +171,23 @@ The database consists of finger vein images of different fingers of different pe
 \begin{itemize}
 \item presets (they provide a certain encoding speed)
  \begin{enumerate}
-   \item ultrafast , superfast , veryfast , faster , fast 
+   \item ultrafast , superfast , veryfast , faster , fast
    \item medium (default)
    \item slow, slower, veryslow, placebo
    \item we focused more to the slower presets (medium-veryslow)
  \end{enumerate}
  \end{itemize}}
- 
+
  \frame{\frametitle{Settings}
  \begin{itemize}
 \item what are the settings behind them?
-  
+
 
 \begin{center}
-\begin{tabular}{ |c|c|c| } 
+\begin{tabular}{ |c|c|c| }
  \hline
  medium & veryslow \\
- \hline 
+ \hline
  \hline
  default & --b-adapt 2  \\
  \hline
@@ -196,9 +201,9 @@ The database consists of finger vein images of different fingers of different pe
 \end{center}
 
 
-      
+
 \end{itemize}
- 
+
 }
  \frame{\frametitle{Settings}
   \begin{itemize}
@@ -214,7 +219,7 @@ The database consists of finger vein images of different fingers of different pe
         \item Defines how many B-frames can be positioned directly behind each other
         \item values are between 0 and 16 (3 is default)
         \end{itemize}
-        
+
     \end{itemize}
   \end{itemize}
  }
@@ -228,8 +233,8 @@ The database consists of finger vein images of different fingers of different pe
     \begin{itemize}
     \item amount of valid reference frames
     \end{itemize}
-    
-\end{itemize} 
+
+\end{itemize}
 }
 
 \frame{\frametitle{Settings (qscale mpeg4)}
@@ -260,8 +265,8 @@ The database consists of finger vein images of different fingers of different pe
 		\item Varying group of pictures (1, 4, 24)
 		\item two presets (medium, veryslow)
 	\end{itemize}
-	
-	
+
+
 }
 
 \frame{\frametitle{Video Compression}
@@ -277,38 +282,17 @@ The database consists of finger vein images of different fingers of different pe
 		\item Collect image names $\rightarrow$ parameters for matcher
 		\item rename decompressed videos
 	\end{itemize}
-	
-	
+
+
 }
 
 \subsection{Matching}
 \frame{\frametitle{Matching}
-	
-	
+
+
 }
 
 
 \section{Results}
 
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
