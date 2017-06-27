@@ -154,6 +154,12 @@ The database consists of finger vein images of different fingers of different pe
 
 }
 
+\frame{\frametitle{Error Metrics}
+	\hspace{0.5cm}
+	\includegraphics[width=8.5cm]{graphics/errors_modified.png}\\
+	\tiny http://www.mdpi.com/sensors/sensors-11-09499/article\_deploy/html/images/sensors-11-09499f22-1024.png	
+}
+
 \section{CRF , Presets and Settings}
 \frame{\frametitle{CRF}
 \begin{itemize}
@@ -247,13 +253,6 @@ The database consists of finger vein images of different fingers of different pe
 }
 
 \section{Implementation}
-
-\subsection{JPEG2000 Compression}
-\frame{\frametitle{JPEG2000 Compression}
-
-
-}
-
 \subsection{Video Compression}
 \frame{\frametitle{Video Compression}
 	Setup:
@@ -261,6 +260,7 @@ The database consists of finger vein images of different fingers of different pe
 		\item Used ffmpeg v.3.3.2 (latest version)
 		\item Compressed 240 images
 		\item Different crf values (0-50)
+		\item Different qscale values for mpeg4 part 2
 		\item Varying group of pictures (1, 4, 24)
 		\item two presets (medium, veryslow)
 	\end{itemize}
@@ -287,7 +287,17 @@ The database consists of finger vein images of different fingers of different pe
 
 \subsection{Matching}
 \frame{\frametitle{Matching}
-
+	\begin{itemize}
+		\item Used matcher as "black box"
+		\item Input:
+		\begin{enumerate}
+			\item original images
+			\item compression output folders (crf, gop, preset)
+		\end{enumerate}
+		\item Match each output folder
+		\item Retrieve error metrics
+		\item Evaluate Error rate dependent on compression rate
+	\end{itemize}
 
 }
 
