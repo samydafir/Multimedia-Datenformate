@@ -24,8 +24,8 @@
 }
 
 \begin{document}
-\title[]{Multimedia Datenformate \\
-Projekttitel}
+\title[]{Using Video Compression to Exploit Similarities in Biometric Databases
+}
 \author[]{Panteleimon Cheropoulos, Samy Dafir, Kevin Schörgnhofer}
 \institute[]{Fachbereich Computerwissenschaften - Universität Salzburg}
 \date[]{30. Juni 2017}
@@ -248,7 +248,7 @@ The database consists of finger vein images of different fingers of different pe
 \item configure and select a video quality level
 \item value for n : 1-31
 \item 1 is the highest quality for largest filesize
-\item 31 is the lawest quality for smalest filesize
+\item 31 is the lowest quality for smalest filesize
 \end{itemize}
 }
 
@@ -303,5 +303,118 @@ The database consists of finger vein images of different fingers of different pe
 
 
 \section{Results}
+\frame{\frametitle{Evaluation}
+	\underline{Compression rate vs. matching errors}\\
+	\begin{itemize}
+		\item Group of pictures (1, 4, 24)
+		\item Codecs (mpeg4 part 2, h.264, h.265)
+		\item presets (medium, veryslow)
+		\item Best result of jpeg2000 compression as baseline
+	\end{itemize}
+}
+
+\frame{\frametitle{Comparing codecs}
+	\includegraphics[width=11cm]{graphics/plot_7.png}
+	
+}
+
+\frame{\frametitle{Comparing codecs}
+	\includegraphics[width=11cm]{graphics/plot_8.png}	
+	
+}
+
+\frame{\frametitle{Comparing codecs}
+	\includegraphics[width=11cm]{graphics/plot_11.png}	
+	
+}
+
+\frame{\frametitle{Comparing codecs}
+	\includegraphics[width=11cm]{graphics/plot_12.png}	
+	
+}
+
+\frame{\frametitle{Comparing group of pictures}
+		\includegraphics[width=11cm]{graphics/plot_1.png}
+	
+}
+
+\frame{\frametitle{Comparing group of pictures}
+		\includegraphics[width=11cm]{graphics/plot_2.png}
+	
+}
+
+\frame{\frametitle{Comparing group of pictures}
+		\includegraphics[width=11cm]{graphics/plot_4.png}
+	
+}
+
+\frame{\frametitle{Comparing group of pictures}
+		\includegraphics[width=11cm]{graphics/plot_6.png}
+	
+}
+
+\frame{\frametitle{Comparing presets}
+	\includegraphics[width=11cm]{graphics/plot_13.png}
+	
+}
+
+\frame{\frametitle{Comparing presets}
+	\includegraphics[width=11cm]{graphics/plot_14.png}
+	
+}
+
+\frame{\frametitle{Comparing presets}
+	\includegraphics[width=11cm]{graphics/plot_15.png}
+	
+}
+
+
+\frame{\frametitle{Conclusion}
+	\underline{Best Results:}
+	\vspace{5mm}
+	\begin{itemize}
+		\item GOP 1
+		\item h.264 or h.265
+		\item veryslow
+	\end{itemize}
+	\vspace{5mm}
+	40\% higher compression at same EER (h.265 veryslow)\\
+	30\% higher compression at same FNMR (h.264 veryslow)
+	
+	
+	
+}
+
+\frame{
+	\vspace{5mm}
+	\centering
+	\huge Thank you for your attention!
+}
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
