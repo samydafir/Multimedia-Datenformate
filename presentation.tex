@@ -171,56 +171,60 @@ The database consists of finger vein images of different fingers of different pe
 
 \frame{\frametitle{Presets}
 \begin{itemize}
-  \item presets (they provide a certain encoding speed)
-  \begin{enumerate}
-    \item ultrafast , superfast , veryfast , faster , fast
-    \item medium (default)
-    \item slow, slower, veryslow, placebo
-    \item we focused more to the slower presets (medium-veryslow)
-  \end{enumerate}
-\end{itemize}}
+\item presets (they provide a certain encoding speed)
+ \begin{enumerate}
+   \item ultrafast , superfast , veryfast , faster , fast
+   \item medium (default)
+   \item slow, slower, veryslow, placebo
+   \item we focused more to the slower presets (medium-veryslow)
+ \end{enumerate}
+ \end{itemize}}
 
-\frame{\frametitle{Settings}
-\begin{itemize}
-  \item what are the settings behind them?
+ \frame{\frametitle{Settings}
+ \begin{itemize}
+\item what are the settings behind them?
 
-  \begin{center}
-    \begin{tabular}{ |c|c|c| }
-    \hline
-    medium & veryslow \\
-    \hline
-    \hline
-    default & --b-adapt 2  \\
-    \hline
-    default & --partitions all  \\
-    \hline
-    default & --bframes 8  \\
-    \hline
-    default & --ref 16  \\
-    \hline
-    \end{tabular}
-  \end{center}
+
+\begin{center}
+\begin{tabular}{ |c|c|c| }
+ \hline
+ medium & veryslow \\
+ \hline
+ \hline
+ --b-adapt 1 & --b-adapt 2  \\
+ \hline
+ --partitions p8x8,b8x8,i8x8,i4x4 & --partitions all  \\
+ \hline
+ --bframes 3 & --bframes 8  \\
+ \hline
+ --ref 3 & --ref 16  \\
+ \hline
+\end{tabular}
+\end{center}
+
+
+
 \end{itemize}
-}
 
-\frame{\frametitle{Settings}
-\begin{itemize}
-  \item quick explanation of the settings :
+}
+ \frame{\frametitle{Settings}
   \begin{itemize}
-    \item --b-adapt "Mod" : \\
+    \item quick explanation of the settings :
     \begin{itemize}
-      \item algorithm for the adaptive distribution of B-frames
-      \item values : 0,1,2
-    \end{itemize}
-    \item --bframes "Max" : \\
-    \begin{itemize}
-      \item Defines how many B-frames can be positioned directly behind each other
-      \item values are between 0 and 16 (3 is default)
+        \item --b-adapt "Mod" : \\
+        \begin{itemize}
+        \item algorithm for the adaptive distribution of B-frames
+        \item values : 0,1,2
+        \end{itemize}
+        \item --bframes "Max" : \\
+        \begin{itemize}
+        \item Defines how many B-frames can be positioned directly behind each other
+        \item values are between 0 and 16 (3 is default)
+        \end{itemize}
+
     \end{itemize}
   \end{itemize}
-\end{itemize}
-}
-
+ }
 \frame{\frametitle{Settings}
 \begin{itemize}
 \item --partitions "partitions" :\\
@@ -237,11 +241,11 @@ The database consists of finger vein images of different fingers of different pe
 
 \frame{\frametitle{Settings (qscale mpeg4)}
 \begin{itemize}
-  \item -qscale:v n
-  \item configure and select a video quality level
-  \item value for n : 1-31
-  \item 1 is the highest quality for largest filesize
-  \item 31 is the lowest quality for smalest filesize
+\item -qscale:v n
+\item configure and select a video quality level
+\item value for n : 1-31
+\item 1 is the highest quality for largest filesize
+\item 31 is the lowest quality for smalest filesize
 \end{itemize}
 }
 
@@ -258,6 +262,7 @@ The database consists of finger vein images of different fingers of different pe
 		\item two presets (medium, veryslow)
 	\end{itemize}
 
+
 }
 
 \frame{\frametitle{Video Compression}
@@ -273,6 +278,8 @@ The database consists of finger vein images of different fingers of different pe
 		\item Collect image names $\rightarrow$ parameters for matcher
 		\item rename decompressed videos
 	\end{itemize}
+
+
 }
 
 \subsection{Matching}
@@ -290,6 +297,7 @@ The database consists of finger vein images of different fingers of different pe
 	\end{itemize}
 
 }
+
 
 \section{Results}
 \frame{\frametitle{Evaluation}
@@ -362,13 +370,15 @@ The database consists of finger vein images of different fingers of different pe
 	\underline{Best Results:}
 	\vspace{5mm}
 	\begin{itemize}
-		\item GOP 1
+		\item GOP 1 or GOP 4
 		\item h.264 or h.265
 		\item veryslow
 	\end{itemize}
 	\vspace{5mm}
 	40\% higher compression at same EER (h.265 veryslow)\\
 	30\% higher compression at same FNMR (h.264 veryslow)
+	
+	
 	
 }
 
@@ -379,29 +389,3 @@ The database consists of finger vein images of different fingers of different pe
 }
 
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
