@@ -188,7 +188,8 @@ The database consists of finger vein images of different fingers of different pe
 \item what are the settings behind them?
 
 
-\begin{center}
+\vspace{5mm}
+\hspace{5mm}
 \begin{tabular}{ |c|c|c| }
  \hline
   & medium & veryslow \\
@@ -201,16 +202,14 @@ The database consists of finger vein images of different fingers of different pe
  --ref & 3 &  16  \\
  \hline
 \end{tabular}
-\end{center}
-
 
 
 \end{itemize}
 
 }
  \frame{\frametitle{Settings}
-  \begin{itemize}
-    \item quick explanation of the settings :
+    \underline{Quick explanation of the settings :}
+    \vspace{3mm}
     \begin{itemize}
         \item --b-adapt "Mod" : \\
         \begin{itemize}
@@ -222,19 +221,13 @@ The database consists of finger vein images of different fingers of different pe
         \item Defines how many B-frames can be positioned directly behind each other
         \item values are between 0 and 16 (3 is default)
         \end{itemize}
+        \item --ref "frames" : \\
+	    \begin{itemize}
+    	\item amount of valid reference frames
+	    \end{itemize}
 
     \end{itemize}
-  \end{itemize}
  }
-\frame{\frametitle{Settings}
-\begin{itemize}
-    \item --ref "frames" : \\
-    \begin{itemize}
-    \item amount of valid reference frames
-    \end{itemize}
-
-\end{itemize}
-}
 
 \frame{\frametitle{Settings (qscale mpeg4)}
 \begin{itemize}
@@ -256,7 +249,7 @@ The database consists of finger vein images of different fingers of different pe
 		\item Different crf values (0-50)
 		\item Different qscale values for mpeg4 part 2
 		\item Varying group of pictures (1, 4, 24)
-		\item two presets (medium, veryslow)
+		\item Two presets (medium, veryslow)
 	\end{itemize}
 
 
@@ -266,7 +259,7 @@ The database consists of finger vein images of different fingers of different pe
 	Repeat for each (crf, gop, preset) - combination
 	\begin{enumerate}
 		\item Compress images into single video
-		\item get videosize (for compression rate)
+		\item Get videosize (for compression rate)
 		\item Decompress video $\rightarrow$ get images
 		\item Put into folder named with settings
 	\end{enumerate}
@@ -274,7 +267,7 @@ The database consists of finger vein images of different fingers of different pe
 	Additional steps
 	\begin{itemize}
 		\item Collect image names $\rightarrow$ parameters for matcher
-		\item rename decompressed videos
+		\item Rename decompressed videos
 	\end{itemize}
 
 
