@@ -61,20 +61,6 @@ The database consists of finger vein images of different fingers of different pe
 \end{figure}
 }
 
-\subsection{JPEG2000}
-\frame{\frametitle{JPEG2000}
-\begin{itemize}
- \item used as a baseline for comparison
- \item standard encoding settings, except number of layers
- \item ImageMagick (7.0.5-10) with integrated OpenJPEG library
- \begin{enumerate}
-  \item encode pictures with jp2, with different compression rates
-  \item determine quality of the pictures
-  \item compare with pictures compressed with video codecs
- \end{enumerate}
-\end{itemize}
-}
-
 \subsection{Video Compression}
 \frame{\frametitle{Video Compression}
 \hspace{2cm}\huge Why video compression?
@@ -93,9 +79,6 @@ The database consists of finger vein images of different fingers of different pe
 		\end{enumerate}
 	\end{itemize}
 }
-
-
-
 
 \subsection{I,P,B-Frames}
 \frame{\frametitle{I,P,B-Frames}
@@ -126,6 +109,20 @@ The database consists of finger vein images of different fingers of different pe
   \item 4 pictures per finger: use GOP 4 $\rightarrow$ 1 I-Frame per finger
  \end{itemize}
  \item P- and B-Frames allow higher compression $\rightarrow$ GOP affects the compression rate
+\end{itemize}
+}
+
+\subsection{JPEG2000}
+\frame{\frametitle{JPEG2000}
+\begin{itemize}
+ \item used as a baseline for comparison
+ \item standard encoding settings, except number of layers
+ \item ImageMagick (7.0.5-10) with integrated OpenJPEG library
+ \begin{enumerate}
+  \item encode pictures with jp2, with different compression rates
+  \item determine quality of the pictures
+  \item compare with pictures compressed with video codecs
+ \end{enumerate}
 \end{itemize}
 }
 
@@ -160,7 +157,7 @@ The database consists of finger vein images of different fingers of different pe
 	\tiny http://www.mdpi.com/sensors/sensors-11-09499/article\_deploy/html/images/sensors-11-09499f22-1024.png	
 }
 
-\section{CRF , Presets and Settings}
+\section{CRF, Presets and Settings}
 \frame{\frametitle{CRF}
 \begin{itemize}
 \item CRF value (Constant Rate Factor)
