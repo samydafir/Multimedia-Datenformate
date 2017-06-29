@@ -35,18 +35,20 @@
 \frame{\frametitle{Inhalt}\tableofcontents}
 
 \section{Introduction}
-\frame{\frametitle{Intro}
-General incentive of this assignment: \\
-\vspace{0.3cm}
-"`Is it possible to effectively apply \textbf{video compression} for almost identical \textbf{pictures}?"' \\
-\vspace{0.3cm}
-$\rightarrow$ can we achieve \textit{better} results with video compression than with image compression?\\
+\subsection{Objective}
+\frame{\frametitle{Objective}
+	\begin{block}{General incentive}
+		Is it possible to effectively apply \textbf{video compression} to very similar \textbf{pictures}? \\
+	\end{block}
+\vspace{5mm}
+$\rightarrow$ can we achieve \textit{better} results with video compression than with image\\
+\hspace{4mm}
+ compression?\\
 $\rightarrow$ which codec is best suited for our purposes?\\
 $\rightarrow$ how does the change of video codec parameters affect the results?\\
 $\rightarrow$ how to determine the quality of the results?\\
 }
 
-\section{Setup}
 \frame{\frametitle{Dataset}
 The database consists of finger vein images of different fingers of different persons\\
 \begin{itemize}
@@ -273,6 +275,7 @@ The database consists of finger vein images of different fingers of different pe
 		\item Decompress video $\rightarrow$ get images
 		\item Put into folder named with settings
 	\end{enumerate}
+	\vspace{5mm}
 	Additional steps
 	\begin{itemize}
 		\item Collect image names $\rightarrow$ parameters for matcher
@@ -311,7 +314,7 @@ The database consists of finger vein images of different fingers of different pe
 }
 
 \frame{\frametitle{Comparing output images}
-  h265 vs. JPEG2000\\
+  h.265 vs. JPEG2000\\
   \vspace{0.5cm}
 	\includegraphics[width=6cm]{graphics/comparison_h265.png} \hfil
   \includegraphics[width=6cm]{graphics/comparison_jp2.jpg}
